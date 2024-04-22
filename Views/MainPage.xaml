@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:viewmodel="clr-namespace:CopilotTest2.ViewModels"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             x:DataType="viewmodel:MainPageViewModel"
+             Title="{Binding Title}"
+             ios:Page.UseSafeArea="True"
+             x:Class="CopilotTest2.Views.MainPage">
+    
+    <Grid   ColumnDefinitions="*,*"
+            RowDefinitions="*,Auto,Auto"
+            RowSpacing="1"
+            Padding="5">
+        
+        <Image  Grid.Row="0"
+                Grid.ColumnSpan="2"
+                Source="{Binding ImageSource}"
+                VerticalOptions="CenterAndExpand" />
+
+        <Button Grid.Row="1"
+                Grid.Column="0"
+                Text="Find Flower"
+                Style="{StaticResource ButtonOutline}"
+                Command="{Binding FindFlowerCommand}" 
+                Margin="5"/>
+
+        <Button Grid.Row="1"
+                Grid.Column="1"
+                Text="Download Flower"
+                Style="{StaticResource ButtonOutline}"
+                Command="{Binding DownloadImageCommand}" 
+                Margin="5"/>
+        
+    </Grid>
+</ContentPage>

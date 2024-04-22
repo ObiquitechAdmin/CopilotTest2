@@ -1,0 +1,11 @@
+﻿using CopilotTest2.ViewModels;
+namespace CopilotTest2.Views;
+
+public partial class MainPage : ContentPage
+{
+    public MainPage(MainPageViewModel viewModel)
+    {
+        InitializeComponent();
+        BindingContext = viewModel;
+    }
+}
