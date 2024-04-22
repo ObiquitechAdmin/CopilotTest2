@@ -10,6 +10,8 @@ global using CommunityToolkit.Maui.Converters;
 global using CommunityToolkit.Mvvm.ComponentModel;
 global using CommunityToolkit.Mvvm.Input;
 global using CommunityToolkit.Mvvm;
+global using CommunityToolkit;
+global using CopilotTest2.ViewModels;
 global using System.Collections.ObjectModel;
 global using System.ComponentModel;
 global using System.Diagnostics;

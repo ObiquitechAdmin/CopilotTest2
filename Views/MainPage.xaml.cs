@@ -3,9 +3,9 @@ namespace CopilotTest2.Views;
 
 public partial class MainPage : ContentPage
 {
-    public MainPage(MainPageViewModel viewModel)
+    public MainPage(MainPageViewModel viewModel_p)
     {
         InitializeComponent();
-        BindingContext = viewModel;
+        BindingContext = viewModel_p;
     }
 }

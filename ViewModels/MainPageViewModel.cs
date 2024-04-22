@@ -4,10 +4,6 @@ public partial class MainPageViewModel : BaseViewModel
 {
     [ObservableProperty]
     private ImageSource _imageSource;
-    [ObservableProperty]
-    private bool _isLoading;
-    [ObservableProperty]
-    bool _isImageLoaded;
 
     public MainPageViewModel()
     {
@@ -15,7 +11,7 @@ public partial class MainPageViewModel : BaseViewModel
     }
 
     [RelayCommand]
-    private async void FindFlower()
+    private async Task FindFlower()
     {
         IsLoading = true;
         try
@@ -26,7 +22,7 @@ public partial class MainPageViewModel : BaseViewModel
         }
         catch (Exception ex)
         {
-            await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "OK");
+            await Shell.Current.DisplayAlert("Error", ex.Message, "OK");
         }
         finally
         {
@@ -35,21 +31,21 @@ public partial class MainPageViewModel : BaseViewModel
     }
 
     [RelayCommand]
-    private async void DownloadImage()
+    private async Task DownloadImage()
     {
         IsLoading = true;
         try
         {
             // Replace with your actual logic to download the image
-            var httpClient = new HttpClient();
-            var bytes = await httpClient.GetByteArrayAsync(ImageSource.ToString());
-            var filePath = Path.Combine(FileSystem.CacheDirectory, "downloaded.jpg");
-            await File.WriteAllBytesAsync(filePath, bytes);
-            await Application.Current.MainPage.DisplayAlert("Success", "Image downloaded successfully", "OK");
+            HttpClient _httpClient = new HttpClient();
+            byte[] _bytes = await _httpClient.GetByteArrayAsync(ImageSource.ToString());
+            string _filePath = Path.Combine(FileSystem.CacheDirectory, "downloaded.jpg");
+            await File.WriteAllBytesAsync(_filePath, _bytes);
+            await Shell.Current.DisplayAlert("Success", "Image downloaded successfully", "OK");
         }
         catch (Exception ex)
         {
-            await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "OK");
+            await Shell.Current.DisplayAlert("Error", ex.Message, "OK");
         }
         finally
         {

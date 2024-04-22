@@ -19,19 +19,28 @@
                 Source="{Binding ImageSource}"
                 VerticalOptions="CenterAndExpand" />
 
-        <Button Grid.Row="1"
-                Grid.Column="0"
-                Text="Find Flower"
-                Style="{StaticResource ButtonOutline}"
+        <Button Text="Find Flower"
                 Command="{Binding FindFlowerCommand}" 
+                IsEnabled="{Binding IsNotLoading}"
+                Style="{StaticResource ButtonOutline}"
+                Grid.Row="1"
+                Grid.Column="0"
                 Margin="5"/>
 
-        <Button Grid.Row="1"
-                Grid.Column="1"
-                Text="Download Flower"
+        <Button Text="Download Flower"
+                IsEnabled="{Binding IsNotLoading}"
                 Style="{StaticResource ButtonOutline}"
                 Command="{Binding DownloadImageCommand}" 
+                Grid.Row="1"
+                Grid.Column="1"
                 Margin="5"/>
-        
+
+        <ActivityIndicator  IsVisible="{Binding IsLoading}"
+                            IsRunning="{Binding IsLoading}"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            Grid.RowSpan="2"
+                            Grid.ColumnSpan="2"/>
+
     </Grid>
 </ContentPage>
