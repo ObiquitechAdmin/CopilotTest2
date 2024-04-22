@@ -12,6 +12,8 @@ global using CommunityToolkit.Mvvm.Input;
 global using CommunityToolkit.Mvvm;
 global using CommunityToolkit;
 global using CopilotTest2.ViewModels;
+global using CopilotTest2.Model;
+global using CopilotTest2.Services;
 global using System.Collections.ObjectModel;
 global using System.ComponentModel;
 global using System.Diagnostics;

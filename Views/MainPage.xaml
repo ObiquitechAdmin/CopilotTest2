@@ -20,7 +20,7 @@
                 VerticalOptions="CenterAndExpand" />
 
         <Button Text="Find Flower"
-                Command="{Binding FindFlowerCommand}" 
+                Command="{Binding FindFlowersCommand}" 
                 IsEnabled="{Binding IsNotLoading}"
                 Style="{StaticResource ButtonOutline}"
                 Grid.Row="1"
