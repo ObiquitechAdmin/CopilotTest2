@@ -1,5 +1,4 @@
-﻿using CopilotTest2.ViewModels;
-namespace CopilotTest2.Views;
+﻿namespace CopilotTest2.Views;
 
 public partial class MainPage : ContentPage
 {

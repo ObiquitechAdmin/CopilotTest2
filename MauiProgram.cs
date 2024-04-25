@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using CopilotTest2.Services;
 using CopilotTest2.Views;
 
 namespace CopilotTest2;
@@ -21,8 +22,12 @@ public static class MauiProgram
         builder.Logging.AddDebug();
 #endif
 
+        #region Registering the items created
+        builder.Services.AddSingleton<FlowerService>();
+
         builder.Services.AddSingleton<MainPageViewModel>();
         builder.Services.AddSingleton<MainPage>();
+        #endregion
 
         return builder.Build();
     }
